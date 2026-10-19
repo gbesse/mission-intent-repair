@@ -1,0 +1,21 @@
+{
+  "name": "Lunar relay / Relais lunaire / Relé lunar",
+  "synthetic": true,
+  "units": { "tick_minutes": 10, "energy": "arbitrary_integer_units", "data": "blocks" },
+  "horizon": 16,
+  "battery_capacity": 20,
+  "battery_initial": 12,
+  "storage_capacity": 6,
+  "storage_initial": 0,
+  "solar": [5,5,5,5,5,5,5,5,0,0,0,0,0,0,0,0],
+  "baseline": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+  "freeze_before": 4,
+  "previous": {"calibrate": 0, "observe-south": 2, "observe-north": 5, "relay-primary": 8},
+  "tasks": [
+    {"id": "calibrate", "duration": 1, "windows": [[0,2]], "energy": 2, "data_delta": 0, "value": 0, "channels": ["attitude"], "required": true},
+    {"id": "observe-south", "duration": 2, "windows": [[2,6]], "energy": 3, "data_delta": 3, "value": 0, "channels": ["attitude"], "after": ["calibrate"]},
+    {"id": "observe-north", "duration": 2, "windows": [[4,8]], "energy": 3, "data_delta": 3, "value": 0, "channels": ["attitude"], "after": ["calibrate"]},
+    {"id": "relay-primary", "duration": 2, "windows": [[8,11]], "energy": 2, "data_delta": -6, "value": 10, "channels": ["attitude","radio"], "after": ["observe-south","observe-north"]},
+    {"id": "relay-backup", "duration": 2, "windows": [[11,15]], "energy": 1, "data_delta": -6, "value": 8, "channels": ["attitude","radio"], "after": ["observe-south","observe-north"]}
+  ]
+}
