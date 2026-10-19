@@ -1,0 +1,5 @@
+include README*.md LICENSE package.json package-lock.json
+recursive-include mission_repair/web *
+recursive-include mission_repair/examples *.json
+recursive-include tests *.py *.mjs
+recursive-include .github *.yml

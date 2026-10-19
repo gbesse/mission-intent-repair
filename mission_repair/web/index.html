@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mission Intent Repair</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="/">◌ MISSION / REPAIR</a>
+      <nav aria-label="Language">
+        <a href="?lang=fr">FR</a><a href="?lang=en">EN</a><a href="?lang=es">ES</a>
+      </nav>
+    </header>
+    <main>
+      <section class="intro">
+        <p class="eyebrow" data-i18n="eyebrow"></p>
+        <h1 data-i18n="title"></h1>
+        <p class="lede" data-i18n="lede"></p>
+      </section>
+      <section class="workspace">
+        <aside>
+          <span class="number">01 /</span>
+          <h2 data-i18n="inject"></h2>
+          <label class="toggle"
+            ><input type="checkbox" id="outage" checked /><span data-i18n="outage"></span
+          ></label>
+          <label class="field" for="capacity"
+            ><span data-i18n="battery"></span><output id="capacity-value">20</output></label
+          >
+          <input type="range" id="capacity" min="12" max="28" value="20" />
+          <p class="hint" data-i18n="freeze"></p>
+          <button id="solve" data-i18n="solve"></button>
+          <p id="status" role="status"></p>
+          <details>
+            <summary data-i18n="input"></summary>
+            <textarea id="case" rows="14" spellcheck="false" aria-label="JSON"></textarea>
+          </details>
+          <button class="secondary" id="custom" data-i18n="custom"></button>
+        </aside>
+        <article>
+          <div class="section-head">
+            <div>
+              <span class="number">02 /</span>
+              <h2 data-i18n="timeline"></h2>
+            </div>
+            <span id="proof" class="badge"></span>
+          </div>
+          <div class="metrics">
+            <div><strong id="utility">—</strong><span data-i18n="utility"></span></div>
+            <div><strong id="edits">—</strong><span data-i18n="edits"></span></div>
+            <div><strong id="replay">—</strong><span data-i18n="replay"></span></div>
+          </div>
+          <div id="timeline"></div>
+          <div class="resource-head">
+            <h3 data-i18n="resources"></h3>
+            <span data-i18n="units"></span>
+          </div>
+          <svg
+            id="chart"
+            viewBox="0 0 640 150"
+            role="img"
+            aria-label="Battery / Batterie / Batería"
+          ></svg>
+          <h3 data-i18n="changes"></h3>
+          <div id="changes"></div>
+          <div class="actions">
+            <button id="download" class="secondary" data-i18n="download"></button
+            ><code id="digest"></code>
+          </div>
+        </article>
+      </section>
+      <footer>
+        <p data-i18n="limit"></p>
+        <a href="https://github.com/gbesse/mission-intent-repair">GitHub ↗</a>
+      </footer>
+    </main>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
