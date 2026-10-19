@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mission-intent-repair"
-version = "0.1.0a1"
-description = "Discrete mission replanning with a frozen past and independent resource replay"
+version = "0.1.0a2"
+description = "Réparer un planning de mission · Repair a mission schedule · Reparar un plan de misión"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
